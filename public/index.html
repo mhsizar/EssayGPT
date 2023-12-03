@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EssayGPT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <!-- Navigation Bar -->
+        <nav id="navbar" class="navbar" style="display:none;">
+            <div class="navbar-container">
+                <a href="#" class="navbar-brand">EssayGPT</a>
+                <!-- Profile Button for User Info and Logout -->
+                <button id="profileButton" onclick="toggleProfile()">Profile</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Profile Section -->
+    <div id="profileSection" class="form" style="display:none;">
+        <p id="profileUsername">You are logged in as: </p>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <main>
+        <div id="loginRegisterContainer">
+            <!-- Welcome Message -->
+            <div class="welcome-message">
+                <h1>Welcome to EssayGPT</h1>
+                <p>Login/Register to Continue</p>
+            </div>
+            <!-- Login Form -->
+            <div id="loginForm" class="form">
+                <input type="text" id="loginUsername" placeholder="Username">
+                <input type="password" id="loginPassword" placeholder="Password">
+                <button onclick="login()">Login</button>
+                <button onclick="showRegister()">Register</button>
+            </div>
+
+            <!-- Registration Form -->
+            <div id="registerForm" class="form" style="display:none;">
+                <input type="text" id="registerUsername" placeholder="Username">
+                <input type="password" id="registerPassword" placeholder="Password">
+                <button onclick="register()">Register</button>
+                <button onclick="showLogin()">Login</button>
+            </div>
+        </div>
+        <!-- Essay Input/Output -->
+        <div id="essayContainer" style="display:none;">
+            <textarea id="essayInput" placeholder="Enter your prompt here"></textarea>
+            <button id="generateButton" onclick="generateEssay()">Generate</button>
+            <div id="loader" class="loader" style="display: none;"></div>
+            <textarea id="essayOutput"></textarea>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
